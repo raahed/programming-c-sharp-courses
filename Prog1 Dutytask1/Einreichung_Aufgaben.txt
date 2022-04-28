@@ -1,0 +1,29 @@
+(1) Öffnet die Commandozeile und startet den Debugger
+(2) Öffnet die Commandozeile, ohne Debugger
+(3) Bei klicken nach dem Breakpoint wird die Ausführung fortgesetzt, ansonsten passiert nichts
+(4) Beendet den Debugger und schließt die Commandozeile
+(5) Springt einen Schritt im Programm weiter
+(6) Auskommentiern einer Zeile
+(7) Entfernen des Kommentars einer Zeile
+(8) Rückt die Zeile einen TAB-Stop weiter
+(9) Rückt die Zeile einen TAB-Stop zurück
+(10) Es passiert nichts
+(11) Es passiert nichts
+(12) .sln-Dateien: Dient der strukturierung des Projekts in VS Code, ist für die Ausführung nicht zwangsläufig erforderlich
+     .csproj-Dateien: Beinhaltet Dateiverweise und wird zum erstellen eines ausführbaren Programms benötigt
+     .cs-Dateien: Beinhaltet den Quellcode und wird zur Ausführung benötigt
+(13) 3 Möglichkeiten
+(14) Code:
+        static void Main(string[] args)
+        {
+            double r, a;
+            string eingabe;
+
+            Console.WriteLine("Bitte Wert für den Radius eingeben: ");
+            eingabe = Console.ReadLine();
+            r = Convert.ToDouble(eingabe);
+
+            a = Math.PI * r * r;
+            Console.WriteLine("Die Fläche beträgt: " + a);
+        }
+(15) Antonia und Anton
