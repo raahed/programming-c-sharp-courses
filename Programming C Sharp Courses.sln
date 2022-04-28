@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prog2 Dutytask2", "Prog2 Du
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog2 Practis2", "Prog2 Practis2\Prog2 Practis2.csproj", "{CBA0B0E9-7885-48D9-8A9A-C64C8CFC057B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog2 Practis3", "Prog2 Practis3\Prog2 Practis3.csproj", "{151876F6-9044-4DF4-AAC9-04327AC7F9E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CBA0B0E9-7885-48D9-8A9A-C64C8CFC057B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBA0B0E9-7885-48D9-8A9A-C64C8CFC057B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBA0B0E9-7885-48D9-8A9A-C64C8CFC057B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{151876F6-9044-4DF4-AAC9-04327AC7F9E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{151876F6-9044-4DF4-AAC9-04327AC7F9E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{151876F6-9044-4DF4-AAC9-04327AC7F9E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{151876F6-9044-4DF4-AAC9-04327AC7F9E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
