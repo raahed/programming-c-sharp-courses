@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog1 LabyPathFinder", "Pro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog1 Practis10", "Prog1 Practis10\Prog1 Practis10.csproj", "{C26A97A5-8BB8-4BE3-9745-D6FB13067FC0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog1 Practis8", "Prog1 Practis8\Prog1 Practis8.csproj", "{EEB5F396-F295-4E95-B1EB-521F58CBF34D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{C26A97A5-8BB8-4BE3-9745-D6FB13067FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C26A97A5-8BB8-4BE3-9745-D6FB13067FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C26A97A5-8BB8-4BE3-9745-D6FB13067FC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEB5F396-F295-4E95-B1EB-521F58CBF34D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEB5F396-F295-4E95-B1EB-521F58CBF34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEB5F396-F295-4E95-B1EB-521F58CBF34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEB5F396-F295-4E95-B1EB-521F58CBF34D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
