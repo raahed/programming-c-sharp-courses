@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog1 Dutytask8", "Prog1 Du
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog1 Dutytask4", "Prog1 Dutytask4\Prog1 Dutytask4.csproj", "{FB7057B1-C3D7-4219-A7A1-D17B08166FE6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog1 Dutytask5", "Prog1 Dutytask5\Prog1 Dutytask5.csproj", "{08FF0669-3BF4-4815-8934-EA336491516A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{FB7057B1-C3D7-4219-A7A1-D17B08166FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB7057B1-C3D7-4219-A7A1-D17B08166FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB7057B1-C3D7-4219-A7A1-D17B08166FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08FF0669-3BF4-4815-8934-EA336491516A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08FF0669-3BF4-4815-8934-EA336491516A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08FF0669-3BF4-4815-8934-EA336491516A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08FF0669-3BF4-4815-8934-EA336491516A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
