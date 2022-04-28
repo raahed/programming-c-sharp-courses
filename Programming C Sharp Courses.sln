@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog1 Practis11", "Prog1 Pr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog1 LabyPathFinder", "Prog1 LabyPathFinder\Prog1 LabyPathFinder.csproj", "{96DCF75D-77E6-4998-89E4-B510EF1DF466}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog1 Practis10", "Prog1 Practis10\Prog1 Practis10.csproj", "{C26A97A5-8BB8-4BE3-9745-D6FB13067FC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{96DCF75D-77E6-4998-89E4-B510EF1DF466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96DCF75D-77E6-4998-89E4-B510EF1DF466}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96DCF75D-77E6-4998-89E4-B510EF1DF466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C26A97A5-8BB8-4BE3-9745-D6FB13067FC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26A97A5-8BB8-4BE3-9745-D6FB13067FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26A97A5-8BB8-4BE3-9745-D6FB13067FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26A97A5-8BB8-4BE3-9745-D6FB13067FC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
