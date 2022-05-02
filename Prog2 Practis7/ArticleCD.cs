@@ -1,4 +1,4 @@
-﻿namespace Prog2_Practis6
+﻿namespace Prog2_Practis7
 {
     public class ArticleCD : Article
     {
@@ -13,6 +13,11 @@
             _singer = singer;
             _albumName = albumName;
             _songCount = songCount;
+        }
+
+        public override string ToString()
+        {
+            return $"Interpret: {_singer}, Albumname: {_albumName}, Anzahl der Lieder: {_songCount}, " + base.ToString();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Prog2_Practis6
+﻿namespace Prog2_Practis7
 {
     public class ArticleVideo : Article
     {
@@ -13,6 +13,11 @@
             _title = title;
             _director = director;
             _availableAsDLC = availableAsDLC;
+        }
+
+        public override string ToString()
+        {
+            return $"Titel: {_title}, Regisseur: {_director}, Als DLC verfügbarr: {(_availableAsDLC ? "Ja" : "Nein")}, " + base.ToString();
         }
     }
 }

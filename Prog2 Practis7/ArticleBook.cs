@@ -1,5 +1,5 @@
 ﻿
-namespace Prog2_Practis6
+namespace Prog2_Practis7
 {
     public class ArticleBook : Article
     {
@@ -14,6 +14,11 @@ namespace Prog2_Practis6
             _title = title;
             _author = author;
             _publisher = publisher;
+        }
+
+        public override string ToString()
+        {
+            return $"Title: {_title}, Author: {_author}, Verlag: {_publisher}, " + base.ToString();
         }
     }
 }

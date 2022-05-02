@@ -2,14 +2,14 @@
 {
     public class Article
     {
-        public uint ArticleID { get; private set; }
-        
-        public uint Price { get; private set; }
-        
+        private uint _article;
+
+        private uint _price;
+
         public Article(uint article, uint price)
         {
-            ArticleID = article;
-            Price = price;
+            _article = article;
+            _price = price;
         }
     }
 }
