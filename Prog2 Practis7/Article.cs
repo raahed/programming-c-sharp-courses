@@ -4,11 +4,11 @@
     {
         private uint _articleID;
 
-        private uint _price;
+        private double _price;
 
-        public uint Price { get { return _price; } set { _price = value; } }
+        public double Price { get { return _price; } set { _price = value; } }
 
-        public Article(uint article, uint price)
+        public Article(uint article, double price)
         {
             _articleID = article;
             _price = price;

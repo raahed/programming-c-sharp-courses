@@ -8,7 +8,7 @@
 
         private bool _availableAsDLC;
 
-        public ArticleVideo(string title, string director, bool availableAsDLC, uint article, uint price) : base(article, price)
+        public ArticleVideo(string title, string director, bool availableAsDLC, uint article, double price) : base(article, price)
         {
             _title = title;
             _director = director;

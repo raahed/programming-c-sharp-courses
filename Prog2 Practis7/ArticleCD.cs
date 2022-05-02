@@ -8,7 +8,7 @@
 
         private uint _songCount;
 
-        public ArticleCD(string singer, string albumName, uint songCount, uint article, uint price) : base(article, price)
+        public ArticleCD(string singer, string albumName, uint songCount, uint article, double price) : base(article, price)
         {
             _singer = singer;
             _albumName = albumName;

@@ -4,14 +4,14 @@
     {
         public Article[] articles;
 
-        public int Weight
+        public double Weight
         {
             get
             {
-                int weight = 0;
+                double weight = 0;
 
                 foreach (Article article in articles)
-                    weight += (int)article.Price;
+                    weight += article.Price;
 
                 return weight;
 

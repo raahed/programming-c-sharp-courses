@@ -4,9 +4,9 @@
     {
         private uint _article;
 
-        private uint _price;
+        private double _price;
 
-        public Article(uint article, uint price)
+        public Article(uint article, double price)
         {
             _article = article;
             _price = price;
