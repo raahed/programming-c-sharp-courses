@@ -47,7 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog2 Practis4", "Prog2 Pra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog2 Practis8", "Prog2 Practis8\Prog2 Practis8.csproj", "{DB9FB82E-2198-470E-9CED-6F0E220EC7E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prog2 Practis9", "Prog2 Practis9\Prog2 Practis9.csproj", "{04849B47-A938-49F7-9773-801FAA3EB0C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog2 Practis9", "Prog2 Practis9\Prog2 Practis9.csproj", "{04849B47-A938-49F7-9773-801FAA3EB0C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prog2 Dutytask3", "Prog2 Dutytask3\Prog2 Dutytask3.csproj", "{DA39AEAB-EB90-4297-8464-7D077C94D869}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +149,10 @@ Global
 		{04849B47-A938-49F7-9773-801FAA3EB0C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04849B47-A938-49F7-9773-801FAA3EB0C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04849B47-A938-49F7-9773-801FAA3EB0C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA39AEAB-EB90-4297-8464-7D077C94D869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA39AEAB-EB90-4297-8464-7D077C94D869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA39AEAB-EB90-4297-8464-7D077C94D869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA39AEAB-EB90-4297-8464-7D077C94D869}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
