@@ -1,8 +1,13 @@
 ﻿namespace Prog2_Dutytask3
 {
-    public class MyList<T> where T : Vehicle, IMyList<T>, IEnumerable<T>
+    public class MyList<T> : IMyList<T>, IEnumerable<T> where T : Vehicle
     {
-        private Element<Vehicle> _first = null;
+        private Element<T> _first = null;
+
+        public Element<T> First
+        {
+            get { return _first; }
+        }
 
         public int Length
         {
@@ -10,7 +15,7 @@
             {
                 int counter = 0;
 
-                Element<Vehicle> element = _first;
+                Element<T> element = _first;
 
                 for (; element != null; counter++)
                     element = element.next;
@@ -19,25 +24,50 @@
             }
         }
 
-        public void Add(Element<Vehicle> newElement)
+        public void Add(T newElement)
         {
-            Element<Vehicle> element = _first;
+
+            Element<T> newElementInstance = new Element<T>(newElement);
+
+            Element<T> element = _first;
 
             while (element != null)
             {
-                if (newElement.GetObj().RegistrationDate.CompareTo(element.GetObj().RegistrationDate) < 0)
-                    break;
+                /*
+                 * 
+                 * TODO
+                 * 
+                 */
 
-                // TODO
+                // Case 1: is before
+                if (element.GetObj().RegistrationDate.CompareTo(newElement.RegistrationDate) < 0)
+                {
+                    InsertBefore(element, newElement);
+                    break;
+                }
+                // Case 2: is after
+                else if (element.GetObj().RegistrationDate.CompareTo(newElement.RegistrationDate) > 0)
+                {
+                    InsertAfter(element, newElement);
+                    break;
+                }
+                // Case 3: look ahead, is equal
+                else
+                {
+                    // Look in the future
+                    if (element.next != null && element.next.GetObj().RegistrationDate.CompareTo(newElement.RegistrationDate) != 0)
+                    {
+                        InsertAfter(element, newElement);
+                        break;
+                    }
+                }
+
+                // Increment
                 element = element.next;
             }
 
             if (element == null)
                 _first = newElement;
-            else
-                element.next = newElement;
-
-            // TODO
         }
 
         public int Remove(Color color)
@@ -46,9 +76,9 @@
 
             Element<T> element = _first;
 
-            while(element != null)
+            while (element != null)
             {
-                if(element.GetObj().VehicleColor == color)
+                if (element.GetObj().VehicleColor == color)
                 {
                     RemoveElement(element);
                     counter++;
@@ -57,35 +87,51 @@
                 element = element.next;
             }
 
+            if (counter == 0)
+                throw new ColorNotFoundException();
+
             return counter;
         }
 
-        private static void InsertAfter(Element<T> element, Element<T> newElement)
+        private void InsertAfter(Element<T> element, Element<T> newElement)
         {
             newElement.next = element.next;
             element.next = newElement;
         }
 
-        private static void RemoveElement(Element<T> element)
+        private void InsertBefore(Element<T> element, Element<T> newElement)
+        {
+            Element<T> prev = FindPrevious(element);
+
+            prev.next = newElement;
+            newElement.next = element;
+        }
+
+        private void RemoveElement(Element<T> element)
         {
             Element<T> prev = FindPrevious(element);
 
             prev.next = element.next;
         }
 
-        private static Element<Vehicle> FindPrevious(Element<Vehicle> element)
+        private Element<T> FindPrevious(Element<T> element)
         {
-            Element<Vehicle> prev = _first;
+            Element<T> prev = _first;
 
-            while(prev.next != element)
+            while (prev.next != element)
+            {
                 prev = prev.next;
+
+                if (prev == null)
+                    return null;
+            }
 
             return prev;
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            return (IEnumerator<T>)new MyListEnum<Vehicle>(_first, Length);
+            return (IEnumerator<T>)this;
         }
     }
 }
