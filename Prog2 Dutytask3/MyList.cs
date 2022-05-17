@@ -1,13 +1,10 @@
-﻿namespace Prog2_Dutytask3
+﻿using System.Collections;
+
+namespace Prog2_Dutytask3
 {
-    public class MyList<T> : IMyList<T>, IEnumerable<T> where T : Vehicle
+    public class MyList<T> : IMyList<T>, IEnumerable where T : Vehicle
     {
         private Element<T> _first = null;
-
-        public Element<T> First
-        {
-            get { return _first; }
-        }
 
         public int Length
         {
@@ -26,48 +23,16 @@
 
         public void Add(T newElement)
         {
-
             Element<T> newElementInstance = new Element<T>(newElement);
 
-            Element<T> element = _first;
+            // TODO Insert logic
 
-            while (element != null)
-            {
-                /*
-                 * 
-                 * TODO
-                 * 
-                 */
+            Element<T> last = GetLastElement();
 
-                // Case 1: is before
-                if (element.GetObj().RegistrationDate.CompareTo(newElement.RegistrationDate) < 0)
-                {
-                    InsertBefore(element, newElement);
-                    break;
-                }
-                // Case 2: is after
-                else if (element.GetObj().RegistrationDate.CompareTo(newElement.RegistrationDate) > 0)
-                {
-                    InsertAfter(element, newElement);
-                    break;
-                }
-                // Case 3: look ahead, is equal
-                else
-                {
-                    // Look in the future
-                    if (element.next != null && element.next.GetObj().RegistrationDate.CompareTo(newElement.RegistrationDate) != 0)
-                    {
-                        InsertAfter(element, newElement);
-                        break;
-                    }
-                }
-
-                // Increment
-                element = element.next;
-            }
-
-            if (element == null)
-                _first = newElement;
+            if (last == null)
+                _first = newElementInstance;
+            else
+                last.next = newElementInstance;
         }
 
         public int Remove(Color color)
@@ -107,6 +72,16 @@
             newElement.next = element;
         }
 
+        private Element<T> GetLastElement()
+        {
+            Element<T> element = _first;
+
+            while(element != null)
+                element = element.next;
+
+            return element;
+        }
+
         private void RemoveElement(Element<T> element)
         {
             Element<T> prev = FindPrevious(element);
@@ -129,9 +104,9 @@
             return prev;
         }
 
-        public IEnumerator<T> GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            return (IEnumerator<T>)this;
+            return new MyListEnum<T>(_first, Length);
         }
     }
 }

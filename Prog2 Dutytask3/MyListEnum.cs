@@ -1,19 +1,24 @@
-﻿namespace Prog2_Dutytask3
+﻿using System.Collections;
+
+namespace Prog2_Dutytask3
 {
-    public class MyListEnum<T> where T : Vehicle, IEnumerator<T>
+    public class MyListEnum<T> : IEnumerator where T : Vehicle
     {
-        private MyList<T> _list;
+        private Element<T> _list;
 
         private int _position = -1;
 
-        public MyListEnum(MyList<T> list)
+        private int _length;
+
+        public MyListEnum(Element<T> list, int length)
         {
             _list = list;
+            _length = length;
         }
 
         public bool MoveNext()
         {
-            return (++_position < _list.Length);
+            return (++_position < _length);
         }
 
         public void Reset()
@@ -21,11 +26,11 @@
             _position = -1;
         }
 
-        public T Current
+         string Current
         {
             get
             {
-                Element<T> element = _list.First;
+                Element<T> element = _list;
 
                 for (int i = 0; i < _position; i++)
                     element = element.next;
@@ -33,9 +38,16 @@
                 if (element == null || _position < 0)
                     throw new InvalidOperationException();
 
-                return element.GetObj();
+                return element.GetObj().GetInfo();
             }
         }
 
+        object IEnumerator.Current
+        {
+            get
+            {
+                return Current;
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@
 
         public override string GetInfo()
         {
-            return $"This is a {VehicleColor} {GetType().ToString().ToLower()}, registered {RegistrationDate}.";
+            return $"This is a {VehicleColor} car, registered {RegistrationDate.ToString("yyyy-M-d")}.";
         }
     }
 }
