@@ -14,7 +14,6 @@ namespace Prog2_Dutytask3
         /// </summary>
         private MyList<T> _list;
 
-
         public MyListEnum(MyList<T> list)
         {
             _list = list;
