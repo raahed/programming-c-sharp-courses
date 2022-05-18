@@ -4,50 +4,56 @@ namespace Prog2_Dutytask3
 {
     public class MyListEnum<T> : IEnumerator where T : Vehicle
     {
-        private Element<T> _list;
+        /// <summary>
+        /// Current list element
+        /// </summary>
+        private Element<T> _current = null;
 
-        private int _position = -1;
+        /// <summary>
+        /// The single linked list instance
+        /// </summary>
+        private MyList<T> _list;
 
-        private int _length;
 
-        public MyListEnum(Element<T> list, int length)
+        public MyListEnum(MyList<T> list)
         {
             _list = list;
-            _length = length;
         }
 
+        /// <summary>
+        /// Move to the next element
+        /// </summary>
+        /// <returns>returns true when the move was possible</returns>
         public bool MoveNext()
         {
-            return (++_position < _length);
+            if (_current == null)
+
+                _current = _list.First;
+            else
+                _current = _current.next;
+
+            return (_current != null);
         }
 
+        /// <summary>
+        /// Reset the iteration
+        /// </summary>
         public void Reset()
         {
-            _position = -1;
+            _current = null;
         }
 
-         string Current
+        /// <summary>
+        /// Returns the information about the current given element
+        /// </summary>
+        string Current
         {
-            get
-            {
-                Element<T> element = _list;
-
-                for (int i = 0; i < _position; i++)
-                    element = element.next;
-
-                if (element == null || _position < 0)
-                    throw new InvalidOperationException();
-
-                return element.GetObj().GetInfo();
-            }
+            get { return _current.GetObj().GetInfo(); }
         }
 
         object IEnumerator.Current
         {
-            get
-            {
-                return Current;
-            }
+            get { return Current; }
         }
     }
 }
