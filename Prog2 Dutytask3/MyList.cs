@@ -83,6 +83,7 @@ namespace Prog2_Dutytask3
 
             Element<T> element = _first;
 
+            // Find any matching color
             while (element != null)
             {
                 if (element.GetObj().VehicleColor == color)

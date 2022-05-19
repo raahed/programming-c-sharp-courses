@@ -5,9 +5,13 @@ namespace Prog2_Dutytask3
     {
         public Motorbike(Color color, DateTime date) : base(color, date) { }
 
+        /// <summary>
+        /// Returns some informations about the motorbike
+        /// </summary>
+        /// <returns>string returns</returns>
         public override string GetInfo()
         {
-            return $"This is a {VehicleColor} motorbike, registered {RegistrationDate.ToString("yyyy-M-d")}.";
+            return $"This is a {VehicleColor} motorbike, registered {RegistrationDate:yyyy-M-d}.";
         }
     }
 }
