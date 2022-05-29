@@ -14,6 +14,15 @@
             Console.WriteLine($" Maximum für den Typ {i.GetType().Name} ist {GetMaximum<int>(i)}");
             Console.WriteLine($" Maximum für den Typ {d.GetType().Name} ist {GetMaximum<double>(d)}");
 
+            try 
+            {
+               GetMaximum<int>(10); 
+            } 
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
             Console.WriteLine("Testing MyList maximum...");
             MyList<int> list = new MyList<int>();
             list.Add(1);
