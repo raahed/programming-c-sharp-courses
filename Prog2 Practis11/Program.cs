@@ -20,9 +20,9 @@
 
             Console.WriteLine("\n\nTesting Filter für Positive Zahlen...");
 
-            MyFilter filterCollection = FilterIfPositive;
+            MyFilter filterIfPositive = FilterIfPositive;
 
-            Filter(list, filterCollection);
+            Filter(list, filterIfPositive);
 
             Console.Write("List: ");
 
@@ -32,9 +32,27 @@
 
             Console.WriteLine("\n\nTesting Filter für teilbar durch zwei...");
 
-            filterCollection = FilterIfModTwo;
+            MyFilter filterIfModTwo = FilterIfModTwo;
 
-            Filter(list, filterCollection);
+            Filter(list, filterIfModTwo);
+
+            Console.Write("List: ");
+
+            foreach (int i in list)
+                Console.Write($"{i} ");
+
+            Console.WriteLine("\n\nTesting MyDelegation class...");
+
+            list.Add(-3);
+            list.Add(-2);
+            list.Add(-1);
+            list.Add(1);
+            list.Add(3);
+
+            MyDelegation.MyFilter filters = MyDelegation.FilterIfModTwo;
+            filters += MyDelegation.FilterIfPositive;
+
+            MyDelegation.doFilter(list, filters);
 
             Console.Write("List: ");
 
@@ -54,37 +72,35 @@
 
         }
 
-        delegate void MyOperation(ref double number);
+        delegate void MyOperation(ref double x);
 
-        static void OperationAbsoluteValue(ref double number)
+        static void OperationAbsoluteValue(ref double x)
         {
-            if (number < 0)
-                number *= -1;
+            if (x < 0)
+                x *= -1;
         }
 
-        static void OperationMultiplyWithTwo(ref double number)
+        static void OperationMultiplyWithTwo(ref double x)
         {
-            number *= 2;
+            x *= 2;
         }
 
-        static void OperationAddOne(ref double number)
+        static void OperationAddOne(ref double x)
         {
-            number += 1;
+            x += 1;
         }
 
         static double[] doOperations(double[] numbers, MyOperation operations)
         {
-            double[] values = numbers;
+            for (int i = 0; i < numbers.Length; i++)
+                operations(ref numbers[i]);
 
-            for (int i = 0; i < values.Length; i++)
-                operations(ref values[i]);
-
-            return values;
+            return numbers;
         }
 
         delegate bool MyFilter(int item);
 
-        static bool FilterIfPositive(int item) => !(item > 0);
+        static bool FilterIfPositive(int item) => (item < 0);
 
         static bool FilterIfModTwo(int item) => !(item % 2 == 0);
 
@@ -92,7 +108,7 @@
         {
             for (int i = 0; i < list.Count; i++)
                 if (filter(list[i]))
-                    list.RemoveAt(i);
+                    list.Remove(i);
         }
     }
 }
