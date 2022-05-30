@@ -1,4 +1,7 @@
-﻿namespace Prog2_Practis10
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace Prog2_Practis10
 {
     public class Program
     {
@@ -10,26 +13,17 @@
             int[] i = { -1, 3, 0, 2 };
             double[] d = { 3.24, Math.PI, Math.E, 10 };
 
-            Console.WriteLine($" Maximum für den Typ {s.GetType().Name} ist {GetMaximum<string>(s)}");
-            Console.WriteLine($" Maximum für den Typ {i.GetType().Name} ist {GetMaximum<int>(i)}");
-            Console.WriteLine($" Maximum für den Typ {d.GetType().Name} ist {GetMaximum<double>(d)}");
-
-            try 
-            {
-               GetMaximum<int>(10); 
-            } 
-            catch (ArgumentException e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            Console.WriteLine($" Maximum für den Typ {s.GetType().Name} ist {GetMaximum(s)}");
+            Console.WriteLine($" Maximum für den Typ {i.GetType().Name} ist {GetMaximum(i)}");
+            Console.WriteLine($" Maximum für den Typ {d.GetType().Name} ist {GetMaximum(d)}");
             
             Console.WriteLine("Testing MyList maximum...");
-            MyList<int> list = new MyList<int>();
+            List<int> list = new List<int>();
             list.Add(1);
             list.Add(2);
             list.Add(3);
             list.Add(-1);
-            Console.WriteLine($"Maximum für MyList ist {list.GetMaximum()}!");
+            Console.WriteLine($"Maximum für List ist {GetMaximumFromStruct<int, List<int>>(list)}!");
 
             Console.WriteLine("Testing Stack...");
             Stack<int> stack = new Stack<int>();
@@ -52,21 +46,24 @@
             }
         }
 
-        static T GetMaximum<T>(object? obj) where T : IComparable<T>
+        static T GetMaximum<T>(T[] array) where T : IComparable
         {
-            if (obj == null)
-                throw new ArgumentNullException();
+            T max = array[0];
 
-            if (!obj.GetType().IsArray)
-                throw new ArgumentException("Argument must be type of array");
+            for (int i = 0; i < array.Length; i++)
+                if (array[i].CompareTo(max) > 0)
+                    max = array[i];
 
-            T[] asArray = (T[])obj;
+            return max;
+        }
 
-            T max = asArray[0];
+        static T1 GetMaximumFromStruct<T1, T2>(T2 obj) where T1 : IComparable where T2 : IEnumerable
+        {
+            T1 max = default(T1);
 
-            for (int i = 0; i < asArray.Length; i++)
-                if (asArray[i].CompareTo(max) > 0)
-                    max = asArray[i];
+            foreach (T1 item in obj)
+                if (item.CompareTo(max) > 0)
+                    max = item;
 
             return max;
         }
