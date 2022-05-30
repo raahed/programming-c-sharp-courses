@@ -1,4 +1,7 @@
-﻿namespace Prog2_Practis10
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace Prog2_Practis10
 {
     public class Program
     {
@@ -15,13 +18,12 @@
             Console.WriteLine($" Maximum für den Typ {d.GetType().Name} ist {GetMaximum(d)}");
 
             Console.WriteLine("Testing MyList maximum...");
-            MyList<int> list = new MyList<int>();
+            List<int> list = new List<int>();
             list.Add(1);
             list.Add(2);
             list.Add(3);
             list.Add(-1);
-
-            Console.WriteLine($"Maximum für MyList ist {list.GetMaximum()}!");
+            Console.WriteLine($"Maximum für List ist {GetMaximumFromStruct<int, List<int>>(list)}!");
 
             Console.WriteLine("Testing Stack...");
             Stack<int> stack = new Stack<int>();
@@ -44,16 +46,24 @@
             }
         }
 
-        static T GetMaximum<T>(T[] array) where T : IComparable<T>
+        static T GetMaximum<T>(T[] array) where T : IComparable
         {
-            if (array == null)
-                throw new ArgumentNullException();
-
             T max = array[0];
 
-            for (int i = 1; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
                 if (array[i].CompareTo(max) > 0)
                     max = array[i];
+
+            return max;
+        }
+
+        static T1 GetMaximumFromStruct<T1, T2>(T2 obj) where T1 : IComparable where T2 : IEnumerable
+        {
+            T1 max = default(T1);
+
+            foreach (T1 item in obj)
+                if (item.CompareTo(max) > 0)
+                    max = item;
 
             return max;
         }
