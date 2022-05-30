@@ -16,7 +16,7 @@ namespace Prog2_Practis10
             Console.WriteLine($" Maximum für den Typ {s.GetType().Name} ist {GetMaximum(s)}");
             Console.WriteLine($" Maximum für den Typ {i.GetType().Name} ist {GetMaximum(i)}");
             Console.WriteLine($" Maximum für den Typ {d.GetType().Name} ist {GetMaximum(d)}");
-            
+
             Console.WriteLine("Testing MyList maximum...");
             List<int> list = new List<int>();
             list.Add(1);
