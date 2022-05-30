@@ -10,9 +10,9 @@
             int[] i = { -1, 3, 0, 2 };
             double[] d = { 3.24, Math.PI, Math.E, 10 };
 
-            Console.WriteLine($" Maximum für den Typ {s.GetType().Name} ist {GetMaximum<string>(s)}");
-            Console.WriteLine($" Maximum für den Typ {i.GetType().Name} ist {GetMaximum<int>(i)}");
-            Console.WriteLine($" Maximum für den Typ {d.GetType().Name} ist {GetMaximum<double>(d)}");
+            Console.WriteLine($" Maximum für den Typ {s.GetType().Name} ist {GetMaximum(s)}");
+            Console.WriteLine($" Maximum für den Typ {i.GetType().Name} ist {GetMaximum(i)}");
+            Console.WriteLine($" Maximum für den Typ {d.GetType().Name} ist {GetMaximum(d)}");
 
             Console.WriteLine("Testing MyList maximum...");
             MyList<int> list = new MyList<int>();
@@ -20,6 +20,7 @@
             list.Add(2);
             list.Add(3);
             list.Add(-1);
+
             Console.WriteLine($"Maximum für MyList ist {list.GetMaximum()}!");
 
             Console.WriteLine("Testing Stack...");
@@ -43,21 +44,16 @@
             }
         }
 
-        static T GetMaximum<T>(object? obj) where T : IComparable<T>
+        static T GetMaximum<T>(T[] array) where T : IComparable<T>
         {
-            if (obj == null)
+            if (array == null)
                 throw new ArgumentNullException();
 
-            if (!obj.GetType().IsArray)
-                throw new ArgumentException("Argument must be type of array");
+            T max = array[0];
 
-            T[] asArray = (T[])obj;
-
-            T max = asArray[0];
-
-            for (int i = 0; i < asArray.Length; i++)
-                if (asArray[i].CompareTo(max) > 0)
-                    max = asArray[i];
+            for (int i = 1; i < array.Length; i++)
+                if (array[i].CompareTo(max) > 0)
+                    max = array[i];
 
             return max;
         }

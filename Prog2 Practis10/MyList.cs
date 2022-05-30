@@ -6,13 +6,11 @@ namespace Prog2_Practis10
     {
         public T GetMaximum()
         {
-            T[] array = ToArray();
+            T max = this.First();
 
-            T max = array[0];
-
-            for(int i = 1; i < array.Length; i++)
-                if(array[i].CompareTo(max) > 0)
-                    max = array[i];
+            foreach(T item in this)
+                if(item.CompareTo(max) > 0)
+                    max = item;
 
             return max;
         }
