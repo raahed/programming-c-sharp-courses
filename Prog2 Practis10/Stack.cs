@@ -39,7 +39,7 @@
 
             return element.value;
         }
-
+            
         public void Push(T value)
         {
             Element<T> newElement = new Element<T>(value);

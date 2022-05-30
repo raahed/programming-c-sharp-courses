@@ -53,7 +53,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog2 Dutytask3", "Prog2 Du
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog2 Practis10", "Prog2 Practis10\Prog2 Practis10.csproj", "{24E4A214-553D-4327-8DD6-D2294679DAB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prog2 Practis11", "Prog2 Practis11\Prog2 Practis11.csproj", "{A85BA2A2-3438-4077-AD35-108D53CB73D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog2 Practis11a", "Prog2 Practis11\Prog2 Practis11a.csproj", "{A85BA2A2-3438-4077-AD35-108D53CB73D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

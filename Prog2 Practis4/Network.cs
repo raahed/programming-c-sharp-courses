@@ -11,6 +11,11 @@
             public int upload = 0;
 
             public int download = 0;
+
+            public override string ToString()
+            {
+                return $"Gerät mit der Adresse {id}: Anzahl Uploads/Downloads = {upload}/{download}";
+            }
         }
 
         public Device start = null;
@@ -20,52 +25,61 @@
             if (start == null)
             {
                 start = device;
+                device.next = start;
                 return;
             }
 
-            Device element = start;
+            Device search = start;
 
-            while (element != null || element.id != previous)
-                element = element.next;
+            while (true)
+            {
+                if( search.id == previous ) { 
+                    device.next = search.next.next;
+                    search.next = device;
+                    return; 
+                }
 
-            Device next = element.next;
+                if (search.next == start)
+                    throw new Exception("Previous device not exists.");
 
-            element.next = device;
-            device.next = next;
+                search = search.next;
+            }
         }
 
         public void RemoveDevice(int id)
         {
-            Device element = start;
+            if (start == null)
+                throw new ArgumentNullException();
 
-            while (element != null || element.id != id)
-                element = element.next;
+            Device search = start;
 
-            if (element.next == null)
-                element = null;
-            else
+            while (true)
             {
-                
-            }
-
-
-        }
-
-        public Device FindPrevious(Device element)
-        {
-            Device previous = start;
-
-            while (previous != null)
-            {
-                if (previous.next == element)
+                if(id == search.next.id)
                 {
-                    return previous;
+                    search.next = search.next.next;
                 }
 
-                previous = previous.next;
-            }
+                if (search.next == start)
+                    throw new Exception("Previous device not exists.");
 
-            return null;    // Cannot be reached
+                search = search.next;
+            }
+        }
+
+        public void PrintNetwork()
+        {
+            Device element = start;
+
+            while(true)
+            {
+                Console.WriteLine(element);
+
+                if (element.next == start)
+                    break;
+
+                element = element.next;
+            }
         }
     }
 }
