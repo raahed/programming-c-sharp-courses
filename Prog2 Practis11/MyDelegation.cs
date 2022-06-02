@@ -31,13 +31,20 @@
 
         public static void doFilter(List<int> list, MyFilter filter)
         {
-            for (int i = 0; i < list.Count; i++)
-            { 
-                if (filter(list[i]))
-                    list.RemoveAt(i);
-                afterFilter(list);
-            }
+            int counter = 0;
 
+            while (counter < list.Count)
+            {
+                if (filter(list[counter]))
+                {
+                    list.RemoveAt(counter);
+                    afterFilter(list);
+                }
+                else
+                    counter++;
+
+
+            }
         }
     }
 }

@@ -13,10 +13,7 @@
             list.Add(2);
             list.Add(3);
 
-            Console.Write("List: ");
-
-            foreach (int i in list)
-                Console.Write($"{i} ");
+            PrintList(list);
 
             Console.WriteLine("\n\nTesting Filter für Positive Zahlen...");
 
@@ -24,10 +21,7 @@
 
             Filter(list, filterIfPositive);
 
-            Console.Write("List: ");
-
-            foreach (int i in list)
-                Console.Write($"{i} ");
+            PrintList(list);
 
 
             Console.WriteLine("\n\nTesting Filter für teilbar durch zwei...");
@@ -36,28 +30,26 @@
 
             Filter(list, filterIfModTwo);
 
-            Console.Write("List: ");
-
-            foreach (int i in list)
-                Console.Write($"{i} ");
+            PrintList(list);
 
             Console.WriteLine("\n\nTesting MyDelegation class...");
 
-            list.Add(-3);
-            list.Add(-2);
-            list.Add(-1);
-            list.Add(1);
-            list.Add(3);
+            List<int> list2 = new List<int>();
+            list2.Add(-3);
+            list2.Add(-2);
+            list2.Add(-1);
+            list2.Add(0);
+            list2.Add(1);
+            list2.Add(2);
+            list2.Add(3);
 
-            MyDelegation.MyFilter filters = MyDelegation.FilterIfModTwo;
-            filters += MyDelegation.FilterIfPositive;
+            MyDelegation.MyFilter filterIfModTwo2 = MyDelegation.FilterIfModTwo;
+            MyDelegation.doFilter(list2, filterIfModTwo2);
 
-            MyDelegation.doFilter(list, filters);
+            MyDelegation.MyFilter filterIfPositive2 = MyDelegation.FilterIfPositive;
+            MyDelegation.doFilter(list2, filterIfPositive2);
 
-            Console.Write("List: ");
-
-            foreach (int i in list)
-                Console.Write($"{i} ");
+            PrintList(list2);
 
 
             Console.WriteLine("\n\nTesting Operations...");
@@ -66,8 +58,10 @@
             operationCollection += OperationMultiplyWithTwo;
             operationCollection += OperationAddOne;
 
+            double[] dArray = { -5, 2, -Math.PI };
+
             Console.Write("Values: ");
-            foreach ( double d in doOperations(new double[] { -5, 2, -Math.PI }, operationCollection))
+            foreach (double d in doOperations(dArray, operationCollection))
                 Console.Write($"{d} ");
 
         }
@@ -106,9 +100,21 @@
 
         static void Filter(List<int> list, MyFilter filter)
         {
-            for (int i = 0; i < list.Count; i++)
-                if (filter(list[i]))
-                    list.Remove(i);
+            int counter = 0;
+
+            while (counter < list.Count)
+                if (filter(list[counter]))
+                    list.RemoveAt(counter);
+                else
+                    counter++;
+        }
+
+        static void PrintList(List<int> list)
+        {
+            Console.Write("List: ");
+
+            foreach (int i in list)
+                Console.Write($"{i} ");
         }
     }
 }
