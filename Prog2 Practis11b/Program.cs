@@ -23,11 +23,10 @@ namespace Prog2_Pracits11b
 		static void Main(string[] args)
 		{
 			// Funktion des Programmes (ohne Erweiterung b):
-			//
-			//
-			//
-			//
-			//
+			// Das Programm überwacht den Pfad in watcher.Path
+			// auf das Event watcher.Renamed von Dateien/Ordnern
+			// im Pfad. Über watcher.NotifyFilter wird eingestellt,
+			// auf welche Attribute reagiert werden soll.
 
 			FileSystemWatcher watcher = new FileSystemWatcher();
 
@@ -39,9 +38,9 @@ namespace Prog2_Pracits11b
 
 			watcher.Renamed += MyRenameEvent;   // Register own event handlers
 
-			watcher.Deleted += MyRemoveEvent;
+			watcher.Deleted += MyRemoveEvent;   // Register own event handlers
 
-			watcher.Created += MyCreatedEvent;
+			watcher.Created += MyCreatedEvent;  // Register own event handlers
 
 			watcher.EnableRaisingEvents = true; // Start watching
 
