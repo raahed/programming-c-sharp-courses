@@ -55,7 +55,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog2 Practis10", "Prog2 Pr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog2 Practis11a", "Prog2 Practis11a\Prog2 Practis11a.csproj", "{A85BA2A2-3438-4077-AD35-108D53CB73D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prog2 Practis11b", "Prog2 Practis11b\Prog2 Practis11b.csproj", "{2B637986-55E1-434C-8A3B-D64A0EFB0A11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prog2 Practis11b", "Prog2 Practis11b\Prog2 Practis11b.csproj", "{2B637986-55E1-434C-8A3B-D64A0EFB0A11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prog3Practis3", "Prog3Practis3\Prog3Practis3.csproj", "{9B8D833C-FF30-494B-8CD6-1FEE093780AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,6 +173,10 @@ Global
 		{2B637986-55E1-434C-8A3B-D64A0EFB0A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B637986-55E1-434C-8A3B-D64A0EFB0A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B637986-55E1-434C-8A3B-D64A0EFB0A11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B8D833C-FF30-494B-8CD6-1FEE093780AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B8D833C-FF30-494B-8CD6-1FEE093780AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B8D833C-FF30-494B-8CD6-1FEE093780AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B8D833C-FF30-494B-8CD6-1FEE093780AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
