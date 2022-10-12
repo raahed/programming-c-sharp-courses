@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Prog3Practis3
+namespace Prog3Practis1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -32,12 +32,6 @@ namespace Prog3Practis3
 
             // Call the feedback method
             Feedback(sender, (RoutedEventArgs)e);
-        }
-
-        private void ApplySliderChange(object sender, RoutedEventArgs e)
-        {
-            if (sender is Slider slider)
-                text.Text = $"{slider.Value}";
         }
 
         private void Feedback(object sender, RoutedEventArgs e)
