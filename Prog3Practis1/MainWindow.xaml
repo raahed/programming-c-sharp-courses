@@ -9,6 +9,6 @@
     <Grid>
         <Button x:Name="button" Content="Reset" HorizontalAlignment="Right" Margin="20,20" VerticalAlignment="Bottom" Click="ResetSlider"/>
         <Slider x:Name="slider" HorizontalAlignment="Left" Margin="106,31,0,0" VerticalAlignment="Top" Width="120" Minimum="0" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="true" Value="50" ValueChanged="ApplySliderChange"/>
-        <TextBlock x:Name="text" HorizontalAlignment="Left" Margin="31,32,0,0" TextWrapping="Wrap" Text="{Binding ElementName=slider, Path=Value}" VerticalAlignment="Top"/>
+        <TextBlock x:Name="text" HorizontalAlignment="Left" Margin="31,32,0,0" TextWrapping="Wrap" Text="50" VerticalAlignment="Top"/>
     </Grid>
 </Window>

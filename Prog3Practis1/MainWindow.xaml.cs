@@ -36,8 +36,8 @@ namespace Prog3Practis3
 
         private void ApplySliderChange(object sender, RoutedEventArgs e)
         {
-            //if (sender is Slider slider)
-            //    text.Text = $"{slider.Value}";
+            if (sender is Slider slider)
+                text.Text = $"{slider.Value}";
         }
 
         private void Feedback(object sender, RoutedEventArgs e)
