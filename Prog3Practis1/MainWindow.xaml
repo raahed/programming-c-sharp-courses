@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Prog3Practis1"
         mc:Ignorable="d"
         Title="MainWindow" SizeToContent="WidthAndHeight" MinHeight="150" MinWidth="250">
-    <Grid Margin="10,10,10,10">
+    <!--<Grid Margin="10,10,10,10">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -18,5 +18,5 @@
         <Button x:Name="button" Content="Reset" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="ResetSlider" Grid.Column="1" Grid.Row="1"/>
         <Slider x:Name="slider" Value="50" MinHeight="10" MinWidth="150" HorizontalAlignment="Stretch" VerticalAlignment="Center" Minimum="0" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="true" Grid.Row="0" Grid.Column="1"/>
         <Label x:Name="text" Content="{Binding ElementName=slider, Path=Value, Mode=OneWay}" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
-    </Grid>
+    </Grid>-->
 </Window>

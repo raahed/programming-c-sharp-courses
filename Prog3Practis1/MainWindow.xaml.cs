@@ -21,9 +21,34 @@ namespace Prog3Practis1
     /// </summary>
     public partial class MainWindow : Window
     {
+        Slider slider;
+        Button button;
+        Label text;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            StackPanel stackPanel = new StackPanel();
+
+            slider = new Slider();
+
+            Binding bind = new Binding(nameof(slider.Value));
+            bind.Source = slider;
+
+            button = new Button();
+            button.Content = "Reset";
+            button.Click += ResetSlider;
+
+            text = new Label();
+            text.Content = "50";
+            text.SetBinding(Label.ContentProperty, bind);
+
+            AddChild(stackPanel);
+            stackPanel.Children.Add(text);
+            stackPanel.Children.Add(slider);
+            stackPanel.Children.Add(button);
+
         }
 
         private void ResetSlider(object sender, EventArgs e)
