@@ -21,42 +21,42 @@ namespace Prog3Practis1
     /// </summary>
     public partial class MainWindow : Window
     {
-        Slider slider;
-        Button button;
-        Label text;
+        //Slider slider;
+        //Button button;
+        //Label text;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            StackPanel stackPanel = new StackPanel();
+            button.Click += Feedback;
 
-            slider = new Slider();
 
-            Binding bind = new Binding(nameof(slider.Value));
-            bind.Source = slider;
+            //StackPanel stackPanel = new StackPanel();
 
-            button = new Button();
-            button.Content = "Reset";
-            button.Click += ResetSlider;
+            //slider = new Slider();
 
-            text = new Label();
-            text.Content = "50";
-            text.SetBinding(Label.ContentProperty, bind);
+            //Binding bind = new Binding(nameof(slider.Value));
+            //bind.Source = slider;
 
-            AddChild(stackPanel);
-            stackPanel.Children.Add(text);
-            stackPanel.Children.Add(slider);
-            stackPanel.Children.Add(button);
+            //button = new Button();
+            //button.Content = "Reset";
+            //button.Click += ResetSlider;
+
+            //text = new Label();
+            //text.Content = "50";
+            //text.SetBinding(Label.ContentProperty, bind);
+
+            //AddChild(stackPanel);
+            //stackPanel.Children.Add(text);
+            //stackPanel.Children.Add(slider);
+            //stackPanel.Children.Add(button);
 
         }
 
         private void ResetSlider(object sender, EventArgs e)
         {
             slider.Value = 0;
-
-            // Call the feedback method
-            Feedback(sender, (RoutedEventArgs)e);
         }
 
         private void Feedback(object sender, RoutedEventArgs e)

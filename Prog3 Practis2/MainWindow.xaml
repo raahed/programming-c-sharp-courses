@@ -5,12 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prog3_Practis2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" SizeToContent="WidthAndHeight">
 
-    <WrapPanel >
+    <!--<WrapPanel >
         <TextBox x:Name="textBox1" TextWrapping="Wrap" Text="" Width="120" TextChanged="Changed_Box"/>
         <TextBox x:Name="textBox2" TextWrapping="Wrap" Text="" Width="120" TextChanged="Changed_Box"/>
         <TextBox x:Name="textBox3" TextWrapping="Wrap" Text="" Width="120" TextChanged="Changed_Box"/>
         <TextBox x:Name="textBox4" TextWrapping="Wrap" Text="" Width="120"/>
+    </WrapPanel>-->
+    <WrapPanel >
+        <TextBox x:Name="textBox1" TextWrapping="Wrap" Text="" Width="120"/>
+        <TextBox x:Name="textBox2" TextWrapping="Wrap" Text="{Binding ElementName=textBox1, Path=Text, Mode=OneWay}" Width="120"/>
+        <TextBox x:Name="textBox3" TextWrapping="Wrap" Text="{Binding ElementName=textBox2, Path=Text, Mode=OneWay}" Width="120"/>
+        <TextBox x:Name="textBox4" TextWrapping="Wrap" Text="{Binding ElementName=textBox3, Path=Text, Mode=OneWay}" Width="120"/>
     </WrapPanel>
 </Window>
+ 

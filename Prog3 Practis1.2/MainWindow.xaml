@@ -1,0 +1,13 @@
+﻿<Window x:Name="window" x:Class="Prog3_Practis1._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prog3_Practis1._2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="grid">
+        <Ellipse x:Name="elli" Fill="Black" Margin="128,42,120,44"/>
+        <Rectangle x:Name="rect" Fill="Blue" Margin="260,12,42,154"/>
+    </Grid>
+</Window>
