@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prog3_Practis4"
         mc:Ignorable="d"
-        Title="Setup" Height="450" Width="800">
+        Title="Setup" Height="224" Width="201">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -18,16 +18,16 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Label Content="ID" Grid.Row="0" Grid.Column="0"/>
+        <Label VerticalAlignment="Center" Content="ID" Grid.Row="0" Grid.Column="0"/>
         <TextBox Name="id" Text="1" Grid.Row="0" Grid.Column="1" Width="50" Height="20"/>
 
-        <Label Content="nbr of Tasks" Grid.Row="1" Grid.Column="0"/>
+        <Label VerticalAlignment="Center" Content="nbr of Tasks" Grid.Row="1" Grid.Column="0"/>
         <TextBox Name="nbr" Text="1" Grid.Row="1" Grid.Column="1" Width="50" Height="20"/>
 
-        <WrapPanel Grid.Row="2">
+        <StackPanel Grid.Row="2">
             <CheckBox Name="mouse">Reset Mouse</CheckBox>
             <CheckBox Name="precuing">Precuing</CheckBox>
-        </WrapPanel>
+        </StackPanel>
 
         <Button Content="Okay" IsDefault="True" Grid.Row="3" Grid.Column="0"  Width="50" Height="20" Click="Button_Click"/>
         <Button Content="Cancel" IsCancel="True" Grid.Row="3" Grid.Column="1"  Width="50" Height="20"/>
