@@ -1,0 +1,36 @@
+﻿<Window x:Class="Prog3_Practis4.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prog3_Practis4"
+        mc:Ignorable="d"
+        Title="Setup" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="ID" Grid.Row="0" Grid.Column="0"/>
+        <TextBox Name="id" Text="1" Grid.Row="0" Grid.Column="1" Width="50" Height="20"/>
+
+        <Label Content="nbr of Tasks" Grid.Row="1" Grid.Column="0"/>
+        <TextBox Name="nbr" Text="1" Grid.Row="1" Grid.Column="1" Width="50" Height="20"/>
+
+        <WrapPanel Grid.Row="2">
+            <CheckBox Name="mouse">Reset Mouse</CheckBox>
+            <CheckBox Name="precuing">Precuing</CheckBox>
+        </WrapPanel>
+
+        <Button Content="Okay" IsDefault="True" Grid.Row="3" Grid.Column="0"  Width="50" Height="20" Click="Button_Click"/>
+        <Button Content="Cancel" IsCancel="True" Grid.Row="3" Grid.Column="1"  Width="50" Height="20"/>
+
+    </Grid>
+</Window>

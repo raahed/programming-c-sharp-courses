@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using Prog3_Practis4;
+using System;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -57,13 +61,22 @@ namespace FittsExercise
             this.bnStart.Background = brClickMe;
 
             // TODO Use a modal setup dialog to configure experimentId, nbrOfTasks, resetMousePos, precuing
+            Settings settings = new Settings();
+
+            settings.ShowDialog();
+
+            if (!(bool)settings.DialogResult)
+                Close();
+
+            precuing = (bool)settings.precuing.IsChecked;
+            resetMousePos = (bool)settings.mouse.IsChecked;
+            nbrOfTasks = (uint)Convert.ToInt32(settings.nbr.Text);
+            experimentId = (uint)Convert.ToInt32(settings.id.Text);
 
             // Execute if setup was confirmed
             log = new Logger(nbrOfTasks);
             Loaded += delegate (object sender, RoutedEventArgs e) { CreateTarget(); };
 
-            // TODO Execute if setup was canceled
-            // Close();
         }
 
         /// <summary>
@@ -193,13 +206,20 @@ namespace FittsExercise
             this.bnStart.Visibility = Visibility.Hidden;
             this.Target.Visibility = Visibility.Hidden;
 
-            // TODO Open a message box, which displays the number of errors occurred in this experiment
+            MessageBox.Show($"Es sind {sessionErrorCount} Fehler aufgetreten.");
 
             // Record this session's data in a file (name includes session id)
             string fileName = "testResults_" + resetMousePos + "_" + precuing + "_" + experimentId;
             string fileNameExt = ".csv";
 
             // TODO Use fileName and fileNameExt to configure a save dialog, which allows for confirming or editing the filename (default folder is ./bin/debug)
+            SaveFileDialog sf = new SaveFileDialog();
+
+            sf.FileName = fileName;
+            sf.DefaultExt = fileNameExt;
+
+            if (sf.ShowDialog() == true)
+                fileName = sf.FileName;
 
             fileName += fileNameExt;
 
