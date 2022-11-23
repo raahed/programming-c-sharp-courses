@@ -7,6 +7,51 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
+        <MenuItem x:Key="MyFileMenu" Header="File">
+            <MenuItem Click="MenuItem_Click" Header="Open">
+                <MenuItem.Icon>
+                    <Image Source="pack://siteoforigin:,,,/Images/dokument.png"></Image>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Click="MenuItem_Click" Header="Recent">
+                <MenuItem.Icon>
+                    <Image Source="pack://siteoforigin:,,,/Images/recent.png"></Image>
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+        <ContextMenu x:Key="MyMenu">
+            <MenuItem Header="File">
+                <MenuItem Click="MenuItem_Click" Header="Open">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/Images/dokument.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Click="MenuItem_Click" Header="Recent">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/Images/recent.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Project">
+                <MenuItem Click="MenuItem_Click" Header="Save">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/Images/save-file.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Click="MenuItem_Click" Header="Sources Show">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/Images/folder-management.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Click="MenuItem_Click" Header="Rename">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/Images/edit.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </ContextMenu>
+    </Window.Resources>
+    <!--    <Window.Resources>
         <ContextMenu x:Key="MyMenu">
             <MenuItem Click="MenuItem_Click" Header="Öffnen Datei">
                 <MenuItem.Icon>
@@ -18,7 +63,10 @@
                     <Image Source="pack://siteoforigin:,,,/Images/recent.png"></Image>
                 </MenuItem.Icon>
             </MenuItem>
-            <!-- Umbenannt, Prinzip Concistency -->
+            <Separator />
+            -->
+    <!-- Umbenannt, Prinzip Concistency -->
+    <!--
             <MenuItem Click="MenuItem_Click" Header="Datei im aktuellen Verzeichnis speichern">
                 <MenuItem.Icon>
                     <Image Source="pack://siteoforigin:,,,/Images/save-file.png"></Image>
@@ -34,33 +82,11 @@
                     <Image Source="pack://siteoforigin:,,,/Images/edit.png"></Image>
                 </MenuItem.Icon>
             </MenuItem>
-            <!-- Umbenannt, Prinzip Concistency -->
+            -->
+    <!-- Umbenannt, Prinzip Concistency -->
+    <!--
         </ContextMenu>
-    </Window.Resources>
-
-    <Label Height="40" Name="MyLabel" ContextMenu="{StaticResource MyMenu}" Content="Nix ausgewählt"></Label>
-
-
-    <!-- Aufgabenteil 1 -->
-    <!--<Grid>
-        <DockPanel VerticalAlignment="Top" Height="20">
-            <Menu Name="MyMenu" DockPanel.Dock="Top">
-                <MenuItem Header="Datei">
-                    <MenuItem Click="MenuItem_Click" Header="Öffnen Datei"></MenuItem>
-                    <MenuItem Click="MenuItem_Click" Header="Zuletzt geöffnet"></MenuItem>
-                    -->
-    <!-- Umbenannt, Prinzip Concistency -->
-    <!--
-                    <MenuItem Click="MenuItem_Click" Header="Datei im aktuellen Verzeichnis speichern"></MenuItem>
-                    <MenuItem Click="MenuItem_Click" Header="Anzeige Projektquellen"></MenuItem>
-                    <MenuItem Click="MenuItem_Click" Header="Projektname ändern"></MenuItem>
-                    -->
-    <!-- Umbenannt, Prinzip Concistency -->
-    <!--
-                </MenuItem>
-
-            </Menu>
-        </DockPanel>
-        <Label Height="40" Name="MyLabel" Content="Nix ausgewählt"></Label>
-    </Grid>-->
+    </Window.Resources>-->
+    <Label Content="Hallo" ContextMenu="{StaticResource MyMenu}">
+    </Label>
 </Window>
