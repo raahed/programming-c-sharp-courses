@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        <Style TargetType="" >
-            
+        <Style TargetType="Label" x:Key="NamedLabel">
+            <Setter Property="Foreground" Value="Gray" />
         </Style>
         <DataTemplate x:Key="ListElement">
             <Grid>
@@ -22,8 +22,17 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Label />
+                <Label Grid.Row="0" Grid.Column="0" Content="Name"/>
+                <Label Grid.Row="0" Grid.Column="1" Content="Age" Style="{StaticResource NamedLabel}"/>
+                <Label Grid.Row="1" Grid.Column="1" Content="Matrikelnummer" Style="{StaticResource NamedLabel}"/>
+                <Label Grid.Row="2" Grid.Column="1" Content="Studiengang" Style="{StaticResource NamedLabel}"/>
+                <Label Grid.Row="0" Grid.Column="2" Content="{}"/>
+                <Label Grid.Row="1" Grid.Column="2" Content="Name"/>
+                <Label Grid.Row="2" Grid.Column="2" Content="Name"/>
             </Grid>
         </DataTemplate>
     </Window.Resources>
+    <StackPanel>
+        <ListBox ItemSource="{}" ItemTemplate="{StaticResource ListElement}"></ListBox>
+    </StackPanel>
 </Window>

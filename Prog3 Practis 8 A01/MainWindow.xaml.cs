@@ -13,27 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Prog3_Practis7_A02
+namespace Prog3_Practis_8_A01
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        List<Student> students = new List<Student>();
-
-        public List<Student> Students { get { return students; } }
-
         public MainWindow()
         {
             InitializeComponent();
-
-            DataContext = this;
-
-            students.Add(new("Hans", 34987, "IN", 18));
-
-            students.Add(new("Günter", 3565677, "MIN", 25));
         }
     }
 }

@@ -1,0 +1,31 @@
+﻿<Window x:Class="Prog3_Practis8_A02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prog3_Practis8_A02"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="800" SizeToContent="Height">
+    <Window.Resources>
+        <ControlTemplate x:Key="MyErrorTemplate">
+            <DockPanel>
+                <AdornedElementPlaceholder/>
+                <Label>Oh nein. Es ist ein Fehler aufgereten.</Label>
+            </DockPanel>
+        </ControlTemplate>
+    </Window.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Zahl</Label>
+            <TextBox Text="{Binding Path=Zahl, UpdateSourceTrigger=PropertyChanged}">
+                <Validation.Error>
+                    
+                </Validation.Error>
+            </TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>String</Label>
+            <TextBox Validation.ErrorTemplate="{StaticResource MyErrorTemplate}" Text="{Binding Path=Zeichenkette, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+    </StackPanel>
+</Window>
