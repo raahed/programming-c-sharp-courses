@@ -7,25 +7,35 @@
         mc:Ignorable="d"
         Title="MainWindow" Width="800" SizeToContent="Height">
     <Window.Resources>
-        <ControlTemplate x:Key="MyErrorTemplate">
+        <ControlTemplate x:Key="MyNumberErrorTemplate">
             <DockPanel>
                 <AdornedElementPlaceholder/>
-                <Label>Oh nein. Es ist ein Fehler aufgereten.</Label>
+                <Label Foreground="DarkRed">Es dürfen nur Zahlen eingegeben werden.</Label>
+            </DockPanel>
+        </ControlTemplate>
+        <ControlTemplate x:Key="MyStringErrorTemplate">
+            <DockPanel>
+                <AdornedElementPlaceholder/>
+                <Label Foreground="DarkRed">Es dürfen nur Buchstaben eingegeben werden.</Label>
             </DockPanel>
         </ControlTemplate>
     </Window.Resources>
     <StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label>Zahl</Label>
-            <TextBox Text="{Binding Path=Zahl, UpdateSourceTrigger=PropertyChanged}">
-                <Validation.Error>
-                    
-                </Validation.Error>
+            <TextBox Validation.ErrorTemplate="{StaticResource MyNumberErrorTemplate}" Text="{Binding Path=Zahl, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label>String</Label>
-            <TextBox Validation.ErrorTemplate="{StaticResource MyErrorTemplate}" Text="{Binding Path=Zeichenkette, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Validation.ErrorTemplate="{StaticResource MyStringErrorTemplate}">
+                <Binding Path="Zeichenkette" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:TextValidaionRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox>
+
         </StackPanel>
     </StackPanel>
 </Window>

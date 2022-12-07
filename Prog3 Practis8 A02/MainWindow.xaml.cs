@@ -33,11 +33,18 @@ namespace Prog3_Practis8_A02
             DataContext = this;
         }
     }
-    public class ZahlValidaionRule : ValidationRule
+    public class TextValidaionRule : ValidationRule
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            throw new NotImplementedException();
+            string text = (string)value;
+
+            if (text.All(c => char.IsLetter(c)))
+                return new ValidationResult(false, "The String contains Digits!");
+
+            return new ValidationResult(true, "All fine!");
+
+                        
         }
     }
 }
