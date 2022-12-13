@@ -1,0 +1,13 @@
+﻿<Window x:Class="WpfMvvmExercise.CarouselWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="UniList View" Height="200" SizeToContent="Width">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <DockPanel>
+            <Button DockPanel.Dock="Top"  Content="Add university" Command="{Binding AddUniCommand}"/>
+            <Button DockPanel.Dock="Left" Content="&lt;" Command="{Binding PreviousUniCommand}"/>
+            <Button DockPanel.Dock="Right" Content="&gt;" Command="{Binding NextUniCommand}"/>
+            <Label DataContext="{Binding Path=SelectedUni}" Content="{Binding Path=Name}" HorizontalAlignment="Stretch"/>
+        </DockPanel>
+    </ScrollViewer>
+</Window>

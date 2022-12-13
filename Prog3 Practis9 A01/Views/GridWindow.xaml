@@ -1,0 +1,11 @@
+﻿<Window x:Class="WpfMvvmExercise.GridWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="UniList View" Height="200" SizeToContent="Width">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <Button Content="Add university" Command="{Binding AddUniCommand}"/>
+            <DataGrid ItemsSource="{Binding Path=Model, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="True" VerticalAlignment="Stretch" CanUserAddRows="False" />
+        </StackPanel>
+    </ScrollViewer>
+</Window>

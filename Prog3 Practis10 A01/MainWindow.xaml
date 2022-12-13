@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfDataTemplate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDataTemplate"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <local:CheckAge x:Key="CheckAge" />
+        <Style x:Key="lbAnnotationStyle" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="DarkGray"/>
+        </Style>
+        <DataTemplate x:Key="StudentTemplate">
+            <Border BorderThickness="1" BorderBrush="DarkGray">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="{Binding Path=Name}" />
+                    <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource lbAnnotationStyle}">Age</Label>
+                    <Label Grid.Row="0" Grid.Column="2" Content="{Binding Path=Age}" Background="{Binding Path=Age, Mode=OneWay, Converter={StaticResource CheckAge}}"/>
+                    <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource lbAnnotationStyle}">Matriculation</Label>
+                    <Label Grid.Row="1" Grid.Column="2" Content="{Binding Path=Matriculation}"/>
+                    <Label Grid.Row="2" Grid.Column="1" Style="{StaticResource lbAnnotationStyle}">Study</Label>
+                    <Label Grid.Row="2" Grid.Column="2" Content="{Binding Path=Study}"/>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+    <StackPanel>
+        <ListBox ItemsSource="{Binding Path=Students}" ItemTemplate="{StaticResource StudentTemplate}" HorizontalContentAlignment="Stretch"/>
+    </StackPanel>
+</Window>
